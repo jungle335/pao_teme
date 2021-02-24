@@ -15,7 +15,7 @@ public class Main {
             System.out.println("Alege 3 pentru a calcula factorialul unui numar n.");
             System.out.println("Alege 4 pentru a afisa suma multiplilor de 3 si 5 pana la n (inclusiv).");
             System.out.println("Alege 5 pentru a citi n numere. Acestea vor fi puse in doi vectori, in functie de paritate.");
-            System.out.println("Alege 6 pentru a citi note pana la intalnirea valorii -1. Se afiseaza media lor.");
+            System.out.println("Alege 6 pentru a citi n note. Cand se citeste -1, se afiseaza media lor.");
             System.out.println("Alege 7 pentru a afisa al n-lea termen din seria Fibonacci.");
             System.out.println("Alege 8 pentru iesire!");
             System.out.println("Optiunea dumneavoastra : ");
@@ -76,19 +76,17 @@ public class Main {
                     break;
 
                 case 6:
-                    int x, k = 0;
-                    int[] note = new int[21];
+                    int x, k = 0, nnote = sc.nextInt();
+                    int[] note = new int[nnote];
                     do {
-                        x = sc.nextInt();
-                        if(x == -1 && k == 0) {
-                            System.out.println("Trebuie citita cel putin o nota!!!");
-                            x = 0;
-                            continue;
-                        }
-                        if(x != -1)
-                            note[k++] = x;
-                    } while (x != -1);
-                    System.out.println(Arrays.stream(note).sum() / (float) k);
+                        note[k++] = sc.nextInt();;
+                    } while (k < nnote);
+                    System.out.println("Pentru a calcula media, introduceti -1");
+            
+                    if(sc.nextInt() == -1)
+                        System.out.println(Arrays.stream(note).sum() / (float) k);
+                    else
+                        System.out.println("Valoare incorecta!");
                     break;
 
                 case 7:
