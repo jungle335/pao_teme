@@ -53,7 +53,6 @@ public class Main {
 
                 case 4:
                     int s = 0, nn = sc.nextInt();
-
                     for (int i = 0; i <= nn; i++) {
                         if (i % 3 == 0 || i % 5 == 0) {
                             s += i;
@@ -92,7 +91,14 @@ public class Main {
 
                 case 7:
                     int fibN = sc.nextInt(), fst = 0, snd = 1, summ = 0;
-                    for(int count = 2; count <= fibN; count++) {
+                    if(fibN == 1) {
+                        System.out.println(fst);
+                        break;
+                    }else if(fibN == 2) {
+                        System.out.println(snd);
+                        break;
+                    }
+                    for(int count = 2; count < fibN; count++) {
                         summ = fst + snd;
                         fst = snd;
                         snd = summ;
