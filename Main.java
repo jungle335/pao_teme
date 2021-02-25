@@ -25,24 +25,25 @@ public class Main {
             switch (op) {
                 case 1:
                     int n = sc.nextInt();
-                    for (int i = 0; i <= n; i++)
-                        if (i % 2 == 0)
+                    for (int i = 0; i <= n; i++) {
+                        if (i % 2 == 0) {
                             System.out.print(i + " ");
+                        }
+                    }
                     System.out.println();
                     break;
 
                 case 2:
                     int a = sc.nextInt(), b = sc.nextInt();
-
-                    if (a < b)
+                    if (a < b) {
                         System.out.println(b);
-                    else
+                    }else {
                         System.out.println(a);
+                    }
                     break;
 
                 case 3:
                     int p = 1, nr = sc.nextInt();
-
                     while (nr > 0) {
                         p *= nr;
                         nr -= 1;
@@ -53,16 +54,16 @@ public class Main {
                 case 4:
                     int s = 0, nn = sc.nextInt();
 
-                    for (int i = 0; i <= nn; i++)
-                        if (i % 3 == 0 || i % 5 == 0)
+                    for (int i = 0; i <= nn; i++) {
+                        if (i % 3 == 0 || i % 5 == 0) {
                             s += i;
+                        }
+                    }
                     System.out.println(s);
                     break;
 
                 case 5:
-                    int nrN = sc.nextInt(), i = 0, j = 0;
-                    int[] par = new int[nrN], imp = new int[nrN];
-
+                    int nrN = sc.nextInt(), i = 0, j = 0, par[] = new int[nrN], imp[] = new int[nrN];
                     for (int k = 0; k < nrN; k++) {
                         int x = sc.nextInt();
                         if (x % 2 == 0) {
@@ -76,24 +77,22 @@ public class Main {
                     break;
 
                 case 6:
-                    int x, k = 0, nnote = sc.nextInt();
-                    int[] note = new int[nnote];
+                    int x, k = 0, nnote = sc.nextInt(), note[] = new int[nnote];
                     do {
-                        note[k++] = sc.nextInt();;
+                        note[k++] = sc.nextInt();
                     } while (k < nnote);
                     System.out.println("Pentru a calcula media, introduceti -1");
 
-                    if(sc.nextInt() == -1)
+                    if(sc.nextInt() == -1) {
                         System.out.println(Arrays.stream(note).sum() / (float) k);
-                    else
+                    }else {
                         System.out.println("Valoare incorecta!");
+                    }
                     break;
 
                 case 7:
                     int fibN = sc.nextInt(), fst = 0, snd = 1, summ = 0;
-
-                    for(int count = 2; count <= fibN; count++)
-                    {
+                    for(int count = 2; count <= fibN; count++) {
                         summ = fst + snd;
                         fst = snd;
                         snd = summ;
