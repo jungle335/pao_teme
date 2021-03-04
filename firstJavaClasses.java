@@ -5,6 +5,14 @@ class Person {
     private int age;
     private long cnp;
 
+    public Person() {
+        this.name    = "";
+        this.surname = "";
+        this.age     = 0;
+        this.cnp     = 0;
+        this.type    = "";
+    }
+    
     public Person(String name, String surname, int age, long cnp, String type) {
         this.name    = name;
         this.surname = surname;
@@ -34,7 +42,12 @@ class Person {
 class Room{
     private int room_number, room_floor;
     String room_type;
-
+    
+    public Room() {
+        this.room_number = this.room_floor = 0;
+        this.room_type = "";
+    }
+    
     public Room(int room_number, String room_type, int room_floor) {
         this.room_number = room_number;
         this.room_type   =  room_type;
@@ -60,6 +73,10 @@ class Subject{
     private int noOfStudents;
     private Person teacher;
 
+    public Subject(){
+        noOfStudents = 0;    
+    }
+    
     public Subject(Room room, int noOfStudents, Person teacher) {
         this.room         = room;
         this.noOfStudents = noOfStudents;
