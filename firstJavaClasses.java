@@ -80,6 +80,14 @@ class Subject{
     }
 }
 
+class Singleton {
+    private static final Singleton noname = new Singleton();
+
+    private Singleton() { System.out.println("Hello"); }
+
+    public static Singleton getNoname() { return noname; }
+}
+
 public class claseBegin {
     public static void main(String[] args) {
         Person p1 = new Person("Popescu", "Geroge", 25, 1256787L, "Male");
@@ -93,8 +101,9 @@ public class claseBegin {
 
         Subject s1 = new Subject(r1, 20, p1);
         Subject s2 = new Subject(r2, 15, p2);
-        System.out.print(s1 + "\n" + s2);
+        System.out.print(s1 + "\n" + s2 + "\n");
 
+        Singleton st = Singleton.getNoname();
+        Singleton st1 = Singleton.getNoname();
     }
 }
-
