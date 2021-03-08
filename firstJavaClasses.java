@@ -1,19 +1,19 @@
 package com.company;
 
-class Person {
+class personC {
     private String name, surname, type;
     private int age;
     private long cnp;
 
-    public Person() {
+    public personC() {
         this.name    = "";
         this.surname = "";
         this.age     = 0;
         this.cnp     = 0;
         this.type    = "";
     }
-    
-    public Person(String name, String surname, int age, long cnp, String type) {
+
+    public personC(String name, String surname, int age, long cnp, String type) {
         this.name    = name;
         this.surname = surname;
         this.age     = age;
@@ -39,88 +39,88 @@ class Person {
     }
 }
 
-class Room{
-    private int room_number, room_floor;
-    String room_type;
-    
-    public Room() {
-        this.room_number = this.room_floor = 0;
-        this.room_type = "";
-    }
-    
-    public Room(int room_number, String room_type, int room_floor) {
-        this.room_number = room_number;
-        this.room_type   =  room_type;
-        this.room_floor  = room_floor;
+class roomC{
+    private int roomC_number, roomC_floor;
+    String roomC_type;
+
+    public roomC() {
+        this.roomC_number = this.roomC_floor = 0;
+        this.roomC_type = "";
     }
 
-    public int getRoom_number() { return room_number; }
-    public String getRoom_type() { return room_type; }
-    public int getRoom_floor() { return room_floor; }
+    public roomC(int roomC_number, String roomC_type, int roomC_floor) {
+        this.roomC_number = roomC_number;
+        this.roomC_type   =  roomC_type;
+        this.roomC_floor  = roomC_floor;
+    }
 
-    public void setRoom_number(int room_number) { this.room_number = room_number; }
-    public void setRoom_type(String room_type) { this.room_type = room_type; }
-    public void setRoom_floor(int room_floor) { this.room_floor = room_floor; }
+    public int getroomC_number() { return roomC_number; }
+    public String getroomC_type() { return roomC_type; }
+    public int getroomC_floor() { return roomC_floor; }
+
+    public void setroomC_number(int roomC_number) { this.roomC_number = roomC_number; }
+    public void setroomC_type(String roomC_type) { this.roomC_type = roomC_type; }
+    public void setroomC_floor(int roomC_floor) { this.roomC_floor = roomC_floor; }
 
     @Override
     public String toString() {
-        return room_number + " " + room_floor + " " + room_type;
+        return roomC_number + " " + roomC_floor + " " + roomC_type;
     }
 }
 
-class Subject{
-    private Room room;
+class subJect{
+    private roomC roomC;
     private int noOfStudents;
-    private Person teacher;
+    private personC teacher;
 
-    public Subject(){
-        noOfStudents = 0;    
+    public subJect(){
+        noOfStudents = 0;
     }
-    
-    public Subject(Room room, int noOfStudents, Person teacher) {
-        this.room         = room;
+
+    public subJect(roomC roomC, int noOfStudents, personC teacher) {
+        this.roomC        = roomC;
         this.noOfStudents = noOfStudents;
         this.teacher      = teacher;
     }
 
-    public Room getRoom() { return room; }
+    public roomC getroomC() { return roomC; }
     public int getNoOfStudents() { return noOfStudents; }
-    public Person getTeacher() { return teacher; }
+    public personC getTeacher() { return teacher; }
 
-    public void setRoom(Room room) { this.room = room; }
+    public void setroomC(roomC roomC) { this.roomC = roomC; }
     public void setNoOfStudents(int noOfStudents) { this.noOfStudents = noOfStudents; }
-    public void setTeacher(Person teacher) { this.teacher = teacher; }
+    public void setTeacher(personC teacher) { this.teacher = teacher; }
 
     @Override
     public String toString() {
-        return room + " " + noOfStudents + " " + teacher;
+        return roomC + " " + noOfStudents + " " + teacher;
     }
 }
 
-class Singleton {
-    private static final Singleton noname = new Singleton();
+class singleTon {
+    private static final singleTon noname = new singleTon();
 
-    private Singleton() { System.out.println("Hello"); }
+    private singleTon() { System.out.println("Hello"); }
 
-    public static Singleton getNoname() { return noname; }
+    public static singleTon getNoname() { return noname; }
 }
 
 public class claseBegin {
     public static void main(String[] args) {
-        Person p1 = new Person("Popescu", "Geroge", 25, 1256787L, "Male");
-        Person p2 = new Person("Badea", "Andreea", 30, 4256723L, "Female");
+        personC p1 = new personC("Popescu", "Geroge", 25, 1256787L, "Male");
+        personC p2 = new personC("Badea", "Andreea", 30, 4256723L, "Female");
         System.out.println(p1 + "\n" + p2);
 
-        Room r1 = new Room(100, "apartament", 1);
-        Room r2 = new Room(101, "garsoniera", 1);
-        System.out.println(r1.getRoom_number() + " " + r1.getRoom_type() + " " + r1.getRoom_floor());
-        System.out.println(r2.getRoom_number() + " " + r2.getRoom_type() + " " + r2.getRoom_floor());
+        roomC r1 = new roomC(100, "apartament", 1);
+        roomC r2 = new roomC(101, "garsoniera", 1);
+        System.out.println(r1.getroomC_number() + " " + r1.getroomC_type() + " " + r1.getroomC_floor());
+        System.out.println(r2.getroomC_number() + " " + r2.getroomC_type() + " " + r2.getroomC_floor());
 
-        Subject s1 = new Subject(r1, 20, p1);
-        Subject s2 = new Subject(r2, 15, p2);
+        subJect s1 = new subJect(r1, 20, p1);
+        subJect s2 = new subJect(r2, 15, p2);
         System.out.print(s1 + "\n" + s2 + "\n");
 
-        Singleton st = Singleton.getNoname();
-        Singleton st1 = Singleton.getNoname();
+        singleTon st = singleTon.getNoname();
+        singleTon st1 = singleTon.getNoname();
     }
 }
