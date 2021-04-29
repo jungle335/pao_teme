@@ -4,6 +4,7 @@ public class Lindt extends CandyBox {
     private double width, height, length;
 
     public Lindt(){
+        super();
         this.width = this.height = this.length = 0;
     }
 

@@ -4,6 +4,7 @@ public class Milka extends CandyBox{
     private double radius, height;
 
     public Milka(){
+        super();
         radius = height = 0;
     }
 
